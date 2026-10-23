@@ -185,7 +185,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CtaBand title="Let’s build what’s next, together." />
+      <CtaBand
+        title="Let’s build what’s next, together."
+        secondary={{ label: 'See our work', href: '/projects' }}
+      />
     </>
   );
 }

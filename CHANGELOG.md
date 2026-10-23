@@ -11,6 +11,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md#updating-the-changelog) for the format.
 
 ### Changed
 
+- **CTA band**: secondary button renamed from “Meet Aurensys” to “About Aurensys” (it links to the About page) and
+  made configurable via a `secondary` prop (`{ label, href }`, or `null` to hide it).
+- **About page**: CTA band's secondary button now says “See our work” and links to `/projects`, instead of linking
+  back to the About page itself.
 - **Navbar**: the “Start a project” button is hidden on the Contact page (desktop and mobile menu), since it
   linked to the page the visitor is already on. On desktop it keeps its space so the nav links don't shift.
 

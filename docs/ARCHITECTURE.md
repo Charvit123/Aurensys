@@ -50,7 +50,7 @@ aurensys/
 | `Marquee` | server | CSS-only infinite scroller |
 | `Counter` | client | Count-up number when scrolled into view |
 | `PageHero` | server | Hero for inner pages |
-| `CtaBand` | server | Call-to-action block (custom `title` / `text`) |
+| `CtaBand` | server | Call-to-action block (custom `title` / `text` / `secondary` button) |
 | `ProjectCover` | server | Generated project artwork from accent colours + pattern |
 | `ProjectCard` | server | Card linking to a project detail page |
 | `ProjectsGrid` | client | Category filter + animated grid |
