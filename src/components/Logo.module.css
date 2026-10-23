@@ -1,0 +1,21 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mark {
+  transition: transform 0.5s var(--ease);
+}
+
+.logo:hover .mark {
+  transform: translateY(-2px) rotate(-4deg);
+}
+
+.word {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 21px;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}

@@ -1,0 +1,115 @@
+.grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
+}
+
+.info {
+  display: grid;
+  gap: 40px;
+}
+
+.infoList {
+  display: grid;
+  gap: 12px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  transition: border-color 0.25s;
+}
+
+a.infoItem:hover {
+  border-color: rgba(245, 181, 68, 0.35);
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--gold);
+  background: var(--gradient-soft);
+  border: 1px solid rgba(245, 181, 68, 0.22);
+}
+
+.infoItem > span:last-child {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.infoLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.infoValue {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.nextTitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.next ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+
+.next li {
+  display: flex;
+  gap: 14px;
+}
+
+.next li > span:last-child {
+  display: grid;
+  gap: 2px;
+  font-size: 15px;
+}
+
+.nextNum {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 181, 68, 0.4);
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.faq {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .grid,
+  .faq {
+    grid-template-columns: 1fr;
+  }
+  .grid > :last-child {
+    order: -1;
+  }
+}

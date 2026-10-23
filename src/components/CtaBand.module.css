@@ -1,0 +1,38 @@
+.band {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  padding: clamp(48px, 8vw, 96px) clamp(24px, 6vw, 80px);
+  text-align: center;
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  bottom: -60%;
+  width: 90%;
+  height: 120%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(245, 181, 68, 0.28), rgba(255, 138, 76, 0.1) 55%, transparent);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 12px;
+}

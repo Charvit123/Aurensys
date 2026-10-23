@@ -1,0 +1,272 @@
+/* ---------- Tech strip ---------- */
+.tech {
+  padding: 28px 0 40px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.techLabel {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+}
+
+/* ---------- Services ---------- */
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.services > div {
+  height: 100%;
+}
+
+.service {
+  height: 100%;
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.service:hover {
+  transform: translateY(-3px);
+}
+
+.serviceIcon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--gold);
+  background: var(--gradient-soft);
+  border: 1px solid rgba(245, 181, 68, 0.22);
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  font-size: 20px;
+}
+
+.service p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* ---------- Values ---------- */
+.values {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(40px, 8vw, 96px);
+  align-items: start;
+}
+
+.valuesHead {
+  position: sticky;
+  top: calc(var(--nav-h) + 40px);
+}
+
+.valueList {
+  display: grid;
+}
+
+.value {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 20px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.value:first-child {
+  padding-top: 0;
+}
+
+.valueNum {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gold);
+  padding-top: 6px;
+}
+
+.value h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.value p {
+  color: var(--text-muted);
+}
+
+/* ---------- Process ---------- */
+.processSection {
+  background: radial-gradient(55% 45% at 50% 45%, rgba(124, 131, 255, 0.07), transparent 75%);
+}
+
+.process {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.processLine {
+  position: absolute;
+  top: 26px;
+  left: 26px;
+  right: 26px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), var(--amber) 40%, rgba(124, 131, 255, 0.6) 80%, transparent);
+  opacity: 0.5;
+}
+
+.step {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.stepNum {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid rgba(245, 181, 68, 0.4);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin-bottom: 12px;
+  box-shadow: 0 0 0 6px var(--bg), 0 0 30px -6px rgba(245, 181, 68, 0.5);
+}
+
+.step h3 {
+  font-size: 21px;
+}
+
+.step p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* ---------- Stats ---------- */
+.stats {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+  display: grid;
+  gap: 8px;
+  padding: 44px 24px;
+  border-left: 1px solid var(--border);
+}
+
+.stat:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.statLabel {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 220px;
+}
+
+/* ---------- Work ---------- */
+.workHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.work {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.work > div {
+  height: 100%;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .services,
+  .work {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 48px;
+  }
+  .processLine {
+    display: none;
+  }
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat:nth-child(3) {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .stat:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 860px) {
+  .values {
+    grid-template-columns: 1fr;
+  }
+  .valuesHead {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .services,
+  .work,
+  .process {
+    grid-template-columns: 1fr;
+  }
+  .stat {
+    padding: 32px 16px;
+  }
+  .value {
+    grid-template-columns: 44px 1fr;
+  }
+  .value h3 {
+    font-size: 22px;
+  }
+}

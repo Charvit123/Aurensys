@@ -1,0 +1,36 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--nav-h) + clamp(64px, 10vw, 120px)) 0 clamp(56px, 8vw, 96px);
+}
+
+.glow {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  width: min(900px, 120vw);
+  height: 520px;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(245, 181, 68, 0.16), rgba(124, 131, 255, 0.08) 60%, transparent);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+}
+
+.inner > * {
+  max-width: 860px;
+}
+
+.title {
+  font-size: clamp(38px, 6vw, 68px);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.text {
+  margin-top: 24px;
+  max-width: 640px;
+}

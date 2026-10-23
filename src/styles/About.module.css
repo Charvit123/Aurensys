@@ -1,0 +1,308 @@
+/* ---------- Story ---------- */
+.story {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(40px, 8vw, 96px);
+  align-items: center;
+}
+
+.storyArt {
+  display: grid;
+  justify-items: center;
+  gap: 28px;
+  padding: 56px 24px;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: radial-gradient(70% 60% at 50% 40%, rgba(245, 181, 68, 0.12), transparent 70%), var(--bg-elev);
+}
+
+.emblem {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  display: grid;
+  place-items: center;
+}
+
+.ring,
+.ring2 {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(245, 181, 68, 0.3);
+  animation: spin 40s linear infinite;
+}
+
+.ring2 {
+  inset: 30px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.08);
+  animation-direction: reverse;
+  animation-duration: 28s;
+}
+
+.ring2::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 16px var(--gold);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.emblemCaption {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+
+.capName {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.capTag {
+  color: var(--text-muted);
+}
+
+.storyText {
+  display: grid;
+  gap: 22px;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.facts > div {
+  display: grid;
+  gap: 6px;
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.factLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.factValue {
+  font-weight: 500;
+}
+
+/* ---------- Pillars ---------- */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pillars > div {
+  height: 100%;
+}
+
+.pillar {
+  height: 100%;
+  padding: 30px 28px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.pillarIcon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--gold);
+  background: var(--gradient-soft);
+  border: 1px solid rgba(245, 181, 68, 0.22);
+  margin-bottom: 8px;
+}
+
+.pillar h3 {
+  font-size: 22px;
+}
+
+.pillar p {
+  color: var(--text-muted);
+}
+
+/* ---------- Values ---------- */
+.values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.valueCard {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 32px 26px 40px;
+  border-left: 1px solid var(--border);
+  transition: background 0.3s var(--ease);
+}
+
+.valueCard:first-child {
+  border-left: 0;
+}
+
+.valueCard:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.valueIndex {
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.valueCard h3 {
+  font-size: 24px;
+}
+
+.valueCard p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* ---------- How we work ---------- */
+.workSection {
+  background: radial-gradient(50% 60% at 0% 50%, rgba(124, 131, 255, 0.07), transparent 70%);
+}
+
+.how {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(40px, 8vw, 96px);
+  align-items: start;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.principle {
+  display: flex;
+  gap: 14px;
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+
+.check {
+  flex-shrink: 0;
+  color: var(--gold);
+  margin-top: 4px;
+}
+
+.principle h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.principle p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* ---------- Stack ---------- */
+.stack {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stackGroup {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.stackGroup h3 {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.stackItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .values,
+  .stack {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .valueCard:nth-child(3) {
+    border-left: 0;
+  }
+  .valueCard:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 860px) {
+  .story,
+  .how {
+    grid-template-columns: 1fr;
+  }
+  .pillars {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .values,
+  .stack,
+  .principles,
+  .facts {
+    grid-template-columns: 1fr;
+  }
+  .valueCard {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .valueCard:first-child {
+    border-top: 0;
+  }
+  .emblem {
+    width: 200px;
+    height: 200px;
+  }
+}
