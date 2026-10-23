@@ -74,6 +74,11 @@
   gap: 10px;
 }
 
+.ctaHidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .toggle {
   display: none;
   width: 42px;

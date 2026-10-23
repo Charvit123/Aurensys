@@ -36,6 +36,8 @@ export default function Navbar() {
   }, [open]);
 
   const isActive = (href) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
+  // The "Start a project" CTA links to /contact, so hide it while already on that page.
+  const onContact = pathname.startsWith('/contact');
 
   return (
     <header className={`${styles.header} ${scrolled || open ? styles.scrolled : ''}`}>
@@ -62,7 +64,13 @@ export default function Navbar() {
         </ul>
 
         <div className={styles.actions}>
-          <Link href="/contact" className={`btn btn-primary btn-sm ${styles.cta}`}>
+          {/* Kept in the layout (visibility: hidden) on /contact so the nav links don't shift */}
+          <Link
+            href="/contact"
+            className={`btn btn-primary btn-sm ${styles.cta} ${onContact ? styles.ctaHidden : ''}`}
+            aria-hidden={onContact || undefined}
+            tabIndex={onContact ? -1 : undefined}
+          >
             Start a project
             <Icon name="arrow" size={16} />
           </Link>
@@ -107,11 +115,13 @@ export default function Navbar() {
                   </Link>
                 </motion.li>
               ))}
-              <li>
-                <Link href="/contact" onClick={closeMenu} className="btn btn-primary" style={{ width: '100%', marginTop: 16 }}>
-                  Start a project <Icon name="arrow" size={16} />
-                </Link>
-              </li>
+              {!onContact && (
+                <li>
+                  <Link href="/contact" onClick={closeMenu} className="btn btn-primary" style={{ width: '100%', marginTop: 16 }}>
+                    Start a project <Icon name="arrow" size={16} />
+                  </Link>
+                </li>
+              )}
             </ul>
           </motion.div>
         )}

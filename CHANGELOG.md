@@ -9,7 +9,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md#updating-the-changelog) for the format.
 
 ## [Unreleased]
 
-_Nothing yet._
+### Changed
+
+- **Navbar**: the “Start a project” button is hidden on the Contact page (desktop and mobile menu), since it
+  linked to the page the visitor is already on. On desktop it keeps its space so the nav links don't shift.
 
 ## [1.1.0] — 2026-10-23
 
