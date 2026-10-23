@@ -11,6 +11,32 @@ See [CONTRIBUTING.md](CONTRIBUTING.md#updating-the-changelog) for the format.
 
 _Nothing yet._
 
+## [1.1.0] — 2026-10-23
+
+Upgrade to Next.js 16 and React 19.
+
+### Changed
+
+- **Dependencies**: upgraded to Next.js 16 (`next`, `eslint-config-next` ^16.4.3), React 19 (`react`, `react-dom`
+  ^19.2.0) and ESLint 9; added `package-lock.json` to the repo for reproducible installs; `engines.node` set to
+  `>=20.9.0` (Next.js 16 minimum).
+- **Project detail page**: `params` is now awaited in the page and `generateMetadata` (required by Next.js 16).
+- **Linting**: replaced the removed `next lint` with the ESLint CLI (`npm run lint` → `eslint .`) and migrated
+  `.eslintrc.json` to flat config `eslint.config.mjs`.
+- **Navbar**: mobile menu now closes via link `onClick` instead of a `setState` inside an effect, and the initial
+  scroll check runs in `requestAnimationFrame` (complies with React Hooks v7 `set-state-in-effect` rule).
+- **Footer**: copyright year computed once at module level (keeps render pure).
+- **Layout**: added `data-scroll-behavior="smooth"` to `<html>` so page navigations still jump instantly to the top
+  while in-page anchor links scroll smoothly (Next.js 16 default changed).
+- **Docs**: README, ARCHITECTURE, CONTRIBUTING and CLAUDE.md updated for Next.js 16 / React 19 / Node 20.9+;
+  CONTRIBUTING now asks to commit `package-lock.json` with dependency changes.
+- **Version**: bumped to 1.1.0.
+
+### Fixed
+
+- **Build config**: set `turbopack.root` and `outputFileTracingRoot` in `next.config.mjs` so Next.js no longer
+  detects the `package-lock.json` in the parent (Desktop) folder as the workspace root.
+
 ## [1.0.0] — 2026-10-23
 
 Initial release of the new Aurensys website, replacing the previous Dsync Dev site.

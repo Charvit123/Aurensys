@@ -14,8 +14,8 @@ The official marketing website for **Aurensys**, a software development & IT sol
 
 | Area        | Choice                                              |
 | ----------- | --------------------------------------------------- |
-| Framework   | [Next.js 14](https://nextjs.org) (App Router)       |
-| UI          | React 18, plain JavaScript                          |
+| Framework   | [Next.js 16](https://nextjs.org) (App Router, Turbopack) |
+| UI          | React 19, plain JavaScript                          |
 | Styling     | CSS Modules + global design tokens (`globals.css`)  |
 | Animation   | [Framer Motion](https://www.framer.com/motion/) + CSS keyframes |
 | Fonts       | Sora (headings) + Inter (body) via Fontsource — self-hosted, no Google request |
@@ -37,7 +37,7 @@ The official marketing website for **Aurensys**, a software development & IT sol
 
 ## Getting started
 
-Requirements: **Node.js 18.17+** (Node 20 LTS recommended).
+Requirements: **Node.js 20.9+** (Node 22 LTS recommended).
 
 ```bash
 npm install
@@ -49,7 +49,7 @@ Other scripts:
 ```bash
 npm run build      # production build
 npm run start      # serve the production build
-npm run lint       # ESLint (next/core-web-vitals)
+npm run lint       # ESLint CLI with eslint-config-next (flat config: eslint.config.mjs)
 ```
 
 ## Contact form setup (optional)

@@ -8,14 +8,14 @@ aurensys/
 │   ├── logo-light.svg          Symbol + wordmark, for light backgrounds
 │   └── favicon.svg
 ├── src/
-│   ├── app/                    Next.js App Router — one folder per route
+│   ├── app/                    Next.js 16 App Router — one folder per route
 │   │   ├── layout.js           Root layout: fonts, global CSS, metadata, Navbar, Footer
 │   │   ├── template.js         Page-enter fade animation (re-mounts per route)
 │   │   ├── globals.css         Design tokens + shared utility classes (.btn, .container, .section…)
 │   │   ├── page.js             Home  (/)
 │   │   ├── about/page.js       About (/about)
 │   │   ├── projects/page.js    Projects list (/projects)
-│   │   ├── projects/[slug]/page.js   Project detail (statically generated)
+│   │   ├── projects/[slug]/page.js   Project detail (statically generated, awaits async `params`)
 │   │   ├── contact/page.js     Contact (/contact)
 │   │   ├── not-found.js        404 page
 │   │   ├── icon.svg            Favicon (picked up automatically by Next.js)
@@ -28,6 +28,8 @@ aurensys/
 │   │   └── projects.js         Projects / case studies (currently samples)
 │   └── styles/                 Page-level CSS Modules (Home, About, Projects, Contact)
 ├── docs/                       Project documentation
+├── next.config.mjs             Next.js config (pins turbopack.root to this folder)
+├── eslint.config.mjs           ESLint flat config (eslint-config-next/core-web-vitals)
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 └── CLAUDE.md

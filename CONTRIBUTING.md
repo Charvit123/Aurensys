@@ -5,9 +5,10 @@
 1. Create a branch from `main`: `git checkout -b feat/short-description`
 2. Make your changes and run `npm run lint` and `npm run build` locally.
 3. **Add an entry to `CHANGELOG.md`** (see below).
-4. Commit using [Conventional Commits](https://www.conventionalcommits.org/):
+4. Commit `package-lock.json` whenever dependencies change.
+5. Commit using [Conventional Commits](https://www.conventionalcommits.org/):
    `feat: add careers page`, `fix: navbar overlap on iPad`, `docs: update brand guide`, `style: …`, `refactor: …`, `chore: …`
-5. Open a pull request into `main`. Vercel creates a preview deployment automatically.
+6. Open a pull request into `main`. Vercel creates a preview deployment automatically.
 
 ## Updating the changelog
 

@@ -16,13 +16,16 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
+    // Check the initial position outside the effect body (react-hooks/set-state-in-effect)
+    const frame = requestAnimationFrame(onScroll);
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
-  // Close the mobile menu on route change
-  useEffect(() => setOpen(false), [pathname]);
+  const closeMenu = () => setOpen(false);
 
   // Lock body scroll while the mobile menu is open
   useEffect(() => {
@@ -37,7 +40,7 @@ export default function Navbar() {
   return (
     <header className={`${styles.header} ${scrolled || open ? styles.scrolled : ''}`}>
       <nav className={`container ${styles.nav}`} aria-label="Main">
-        <Link href="/" className={styles.brand} aria-label="Aurensys home">
+        <Link href="/" onClick={closeMenu} className={styles.brand} aria-label="Aurensys home">
           <Logo />
         </Link>
 
@@ -94,14 +97,18 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * i + 0.05 }}
                 >
-                  <Link href={l.href} className={`${styles.mobileLink} ${isActive(l.href) ? styles.mobileActive : ''}`}>
+                  <Link
+                    href={l.href}
+                    onClick={closeMenu}
+                    className={`${styles.mobileLink} ${isActive(l.href) ? styles.mobileActive : ''}`}
+                  >
                     {l.label}
                     <Icon name="arrowUpRight" size={20} />
                   </Link>
                 </motion.li>
               ))}
               <li>
-                <Link href="/contact" className="btn btn-primary" style={{ width: '100%', marginTop: 16 }}>
+                <Link href="/contact" onClick={closeMenu} className="btn btn-primary" style={{ width: '100%', marginTop: 16 }}>
                   Start a project <Icon name="arrow" size={16} />
                 </Link>
               </li>

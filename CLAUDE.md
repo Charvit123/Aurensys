@@ -1,6 +1,11 @@
 # Notes for AI assistants (Claude, etc.)
 
-This is the Aurensys company website — Next.js 14 App Router, JavaScript, CSS Modules, Framer Motion.
+This is the Aurensys company website — Next.js 16 App Router (Turbopack), React 19, JavaScript, CSS Modules,
+Framer Motion.
+
+Next.js 16 notes: `params`/`searchParams` are Promises (always `await` them); `next lint` no longer exists
+(`npm run lint` runs the ESLint CLI with `eslint.config.mjs`); React Hooks v7 lint rules forbid calling
+`setState` synchronously inside an effect body.
 
 ## Always
 

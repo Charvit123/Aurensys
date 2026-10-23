@@ -12,14 +12,17 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const project = getProject(params.slug);
+// Next.js 16: `params` is a Promise and must be awaited.
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const project = getProject(slug);
   if (!project) return {};
   return { title: `${project.title} — ${project.subtitle}`, description: project.summary };
 }
 
-export default function ProjectDetailPage({ params }) {
-  const project = getProject(params.slug);
+export default async function ProjectDetailPage({ params }) {
+  const { slug } = await params;
+  const project = getProject(slug);
   if (!project) notFound();
 
   const others = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
