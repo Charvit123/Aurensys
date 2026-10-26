@@ -1,5 +1,7 @@
 .panel {
   position: relative;
+  width: 100%;
+  min-width: 0;
   border-radius: 20px;
   border: 1px solid var(--border-strong);
   background: linear-gradient(180deg, rgba(21, 25, 36, 0.92), rgba(11, 13, 18, 0.95));
@@ -30,6 +32,7 @@
 }
 
 .path {
+  min-width: 0;
   color: var(--text-dim);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 12px;
@@ -40,6 +43,11 @@
 }
 
 .status {
+  flex-shrink: 0;
+  /* same width for "Building" and "Live" so the header never changes size */
+  min-width: 96px;
+  justify-content: center;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -81,7 +89,7 @@
 
 .stages {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -168,6 +176,7 @@
 
 .logText {
   flex: 1;
+  min-width: 0;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
@@ -175,6 +184,7 @@
 }
 
 .logState {
+  flex-shrink: 0;
   color: var(--text-dim);
 }
 
@@ -184,7 +194,7 @@
 
 .metrics {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -198,6 +208,7 @@
 }
 
 .mLabel {
+  overflow-wrap: anywhere;
   color: var(--text-dim);
   font-size: 11px;
   text-transform: uppercase;
@@ -217,5 +228,18 @@
   }
   .stages {
     justify-items: center;
+  }
+  .head {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+  .body {
+    padding: 18px 14px 14px;
+  }
+  .metrics > div {
+    padding: 10px;
+  }
+  .mValue {
+    font-size: 16px;
   }
 }

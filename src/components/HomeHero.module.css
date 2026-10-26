@@ -68,12 +68,15 @@
 .inner {
   position: relative;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  /* minmax(0, …) lets the columns shrink below their content's min width,
+     so nothing can push the hero wider than the screen */
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: center;
   gap: clamp(40px, 6vw, 72px);
 }
 
 .copy {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -145,14 +148,16 @@
 }
 
 .visual {
+  min-width: 0;
   perspective: 1200px;
 }
 
 @media (max-width: 960px) {
   .inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
+  /* single column: panel spans the full content width (no empty gap on the right) */
   .visual {
-    max-width: 560px;
+    width: 100%;
   }
 }

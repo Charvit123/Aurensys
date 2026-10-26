@@ -9,7 +9,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md#updating-the-changelog) for the format.
 
 ## [Unreleased]
 
-_Nothing yet._
+### Fixed
+
+- **Home hero (mobile)**: the pipeline panel and hero buttons could overflow the right edge on Android phones
+  (e.g. Samsung with larger system font) — most visibly in the “Building” state. Hero grid columns now use
+  `minmax(0, 1fr)`, panel children can shrink (`min-width: 0`), and the panel uses tighter padding under 480px.
+- **Home hero panel**: the status badge has a fixed minimum width, so “Building” and “Live” look identical in size
+  and the header no longer shifts while the animation loops.
+- **Home hero (tablet / zoomed desktop, ≤ 960px)**: the panel now spans the full content width instead of being
+  capped at 560px, removing the empty gap on the right.
 
 ## [1.2.0] — 2026-10-26
 
