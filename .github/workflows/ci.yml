@@ -1,0 +1,35 @@
+# Quality check for every push and pull request.
+# Deployment itself is handled by Vercel's GitHub integration (see docs/DEPLOYMENT.md):
+#   push to main  -> production deploy
+#   pull request  -> preview deploy
+# This workflow makes sure lint and build pass, so a broken commit is flagged on GitHub.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build

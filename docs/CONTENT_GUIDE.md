@@ -18,7 +18,10 @@ Also in `src/data/site.js` (`values`, `process`, `commitments`, `techStack`, `ma
 
 ## Adding a real project
 
-Open `src/data/projects.js` and add (or edit) an object:
+While the `projects` array in `src/data/projects.js` is empty, `/projects` shows a **Coming soon** page and the
+Home page hides the “Selected work” section. Add the first project and both switch over automatically.
+
+Add an object to the `projects` array:
 
 ```js
 {
@@ -35,12 +38,10 @@ Open `src/data/projects.js` and add (or edit) an object:
   solution: 'What did we build and how?',
   outcomes: ['Result one', 'Result two', 'Result three'],
   stack: ['Next.js', 'Node.js', 'PostgreSQL'],
-  isSample: false,                  // false = real project, hides the “Sample” badge
 }
 ```
 
 - The first three projects in the array appear on the Home page under “Selected work”.
-- When **no** project has `isSample: true`, the notice banner on `/projects` disappears automatically.
 - To add a new category, add it to the `categories` array.
 
 ### Using real screenshots later

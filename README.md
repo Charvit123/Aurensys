@@ -26,9 +26,9 @@ The official marketing website for **Aurensys**, a software development & IT sol
 
 | Route               | Description                                                   |
 | ------------------- | ------------------------------------------------------------- |
-| `/`                 | Home — hero, services, values, process, commitments, selected work, CTA |
+| `/`                 | Home — hero, services, values, process, commitments, selected work (shown once projects exist), CTA |
 | `/about`            | About us — story, mission/vision/promise, values, how we work, tech stack |
-| `/projects`         | Projects with category filter (currently **sample data**)     |
+| `/projects`         | “Coming soon” page while there are no projects; project grid with category filter once added |
 | `/projects/[slug]`  | Project / case-study detail page                              |
 | `/contact`          | Contact form, contact details, next steps, FAQ                |
 | `*`                 | Custom 404                                                    |
@@ -67,12 +67,11 @@ To send messages directly instead:
 Almost all text lives in `src/data/` — you rarely need to touch components.
 See **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)** for step-by-step instructions (adding a real project, changing contact details, etc.).
 
-## Deploying to Vercel
+## Deploying
 
-1. Push this repository to GitHub.
-2. In Vercel, **Add New → Project**, import the repo. The defaults (Next.js preset) are correct.
-3. Add the EmailJS environment variables if you use them.
-4. After you connect your real domain, update `site.url` in `src/data/site.js`.
+Hosted on **Vercel** with automatic deploys: every push to `main` goes live, every pull request gets a preview
+URL, and GitHub Actions checks lint + build on each commit.
+One-time setup and day-to-day workflow: **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**.
 
 ## Documentation
 
@@ -83,13 +82,15 @@ See **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)** for step-by-step instruct
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Folder structure and how the pieces fit together |
 | [docs/BRAND.md](docs/BRAND.md) | Logo, colour palette, typography and voice |
 | [docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md) | How to update text, projects and contact details |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Vercel auto-deploy setup, domains, rollbacks, CI |
 | [CLAUDE.md](CLAUDE.md) | Instructions for AI assistants working on this repo |
 
 ## Before going live — checklist
 
 - [ ] Replace placeholder email `hello@aurensys.com` and social links in `src/data/site.js`
 - [ ] Set the final domain in `site.url`
-- [ ] Replace sample projects in `src/data/projects.js` with real case studies (or remove `isSample`)
+- [ ] Connect the repo to Vercel (see `docs/DEPLOYMENT.md`)
+- [ ] Add real case studies to `src/data/projects.js` when ready (the Projects page shows “Coming soon” until then)
 - [ ] Configure EmailJS (optional)
 - [ ] Add an Open Graph image (`src/app/opengraph-image.png`, 1200×630)
 

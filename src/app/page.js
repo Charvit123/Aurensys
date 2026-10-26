@@ -122,30 +122,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Selected work */}
-      <section className="section">
-        <div className="container">
-          <div className={styles.workHead}>
-            <Reveal className="section-head" style={{ marginBottom: 0 }}>
-              <span className="eyebrow">Selected work</span>
-              <h2 className="h-section">Products we’re proud to engineer.</h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <Link href="/projects" className="btn btn-ghost">
-                View all projects <Icon name="arrow" size={16} />
-              </Link>
-            </Reveal>
-          </div>
-
-          <div className={styles.work}>
-            {projects.slice(0, 3).map((p, i) => (
-              <Reveal key={p.slug} delay={i * 0.08}>
-                <ProjectCard project={p} />
+      {/* Selected work — hidden until real projects are added in src/data/projects.js */}
+      {projects.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <div className={styles.workHead}>
+              <Reveal className="section-head" style={{ marginBottom: 0 }}>
+                <span className="eyebrow">Selected work</span>
+                <h2 className="h-section">Products we’re proud to engineer.</h2>
               </Reveal>
-            ))}
+              <Reveal delay={0.1}>
+                <Link href="/projects" className="btn btn-ghost">
+                  View all projects <Icon name="arrow" size={16} />
+                </Link>
+              </Reveal>
+            </div>
+
+            <div className={styles.work}>
+              {projects.slice(0, 3).map((p, i) => (
+                <Reveal key={p.slug} delay={i * 0.08}>
+                  <ProjectCard project={p} />
+                </Reveal>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <CtaBand />
     </>

@@ -9,14 +9,38 @@ See [CONTRIBUTING.md](CONTRIBUTING.md#updating-the-changelog) for the format.
 
 ## [Unreleased]
 
+_Nothing yet._
+
+## [1.2.0] — 2026-10-26
+
+Ready for hosting: no placeholder projects, automatic deploys.
+
+### Added
+
+- **Projects page**: “Coming soon” state (`ProjectsComingSoon` component) shown while there are no projects —
+  status badge, placeholder case-study cards with a light shimmer, what each case study will cover, and CTAs to
+  Contact and Services.
+- **Deployment**: GitHub Actions CI (`.github/workflows/ci.yml`) runs `npm ci`, lint and build on every push to
+  `main` and every pull request.
+- **Docs**: `docs/DEPLOYMENT.md` — Vercel Git integration setup (push to `main` = production deploy, PR = preview),
+  custom domain, rollback and environment variables.
+
 ### Changed
 
+- **Home page**: “Selected work” section only renders when at least one project exists.
+- **Docs**: README (pages table, deploy section, go-live checklist), ARCHITECTURE and CONTENT_GUIDE updated for the
+  Coming soon state and deployment flow.
+- **Version**: bumped to 1.2.0.
 - **CTA band**: secondary button renamed from “Meet Aurensys” to “About Aurensys” (it links to the About page) and
   made configurable via a `secondary` prop (`{ label, href }`, or `null` to hide it).
 - **About page**: CTA band's secondary button now says “See our work” and links to `/projects`, instead of linking
   back to the About page itself.
 - **Navbar**: the “Start a project” button is hidden on the Contact page (desktop and mobile menu), since it
   linked to the page the visitor is already on. On desktop it keeps its space so the nav links don't shift.
+
+### Removed
+
+- **Projects**: all 6 sample/dummy projects and the “Sample” badge / notice, so no placeholder work is published.
 
 ## [1.1.0] — 2026-10-23
 

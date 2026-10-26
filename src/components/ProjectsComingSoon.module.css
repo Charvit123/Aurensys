@@ -1,0 +1,209 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+  padding: clamp(32px, 6vw, 64px);
+  border-radius: 28px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+}
+
+.glow {
+  position: absolute;
+  right: -10%;
+  top: -40%;
+  width: 70%;
+  height: 140%;
+  background: radial-gradient(closest-side, rgba(245, 181, 68, 0.18), rgba(124, 131, 255, 0.08) 60%, transparent);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.copy {
+  position: relative;
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 181, 68, 0.4);
+  background: var(--gradient-soft);
+  color: var(--gold-light);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--gold);
+  animation: pulse 1.8s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  100% {
+    box-shadow: 0 0 0 9px transparent;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ---------- Placeholder cards ---------- */
+.stack {
+  position: relative;
+  display: grid;
+  gap: 14px;
+}
+
+.ghost {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(7, 8, 12, 0.6);
+}
+
+.ghost:nth-child(2) {
+  margin-left: 24px;
+  opacity: 0.75;
+}
+
+.ghost:nth-child(3) {
+  margin-left: 48px;
+  opacity: 0.5;
+}
+
+.ghostCover {
+  position: relative;
+  overflow: hidden;
+  height: 64px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(245, 181, 68, 0.28), rgba(124, 131, 255, 0.18));
+}
+
+.ghostBody {
+  display: grid;
+  gap: 8px;
+}
+
+.ghostLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.line {
+  position: relative;
+  overflow: hidden;
+  height: 7px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* soft shimmer sweeping across the placeholders */
+.ghostCover::after,
+.line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  animation: shimmer 2.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* ---------- What each case study covers ---------- */
+.coversHead {
+  margin: clamp(56px, 8vw, 88px) 0 32px;
+}
+
+.coversTitle {
+  font-size: clamp(24px, 3vw, 32px);
+}
+
+.covers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.cover {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+
+.coverIcon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--gold);
+  background: var(--gradient-soft);
+  border: 1px solid rgba(245, 181, 68, 0.22);
+  margin-bottom: 6px;
+}
+
+.cover h3 {
+  font-size: 18px;
+}
+
+.cover p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+@media (max-width: 1000px) {
+  .covers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .covers {
+    grid-template-columns: 1fr;
+  }
+  .ghost:nth-child(2),
+  .ghost:nth-child(3) {
+    margin-left: 0;
+  }
+}

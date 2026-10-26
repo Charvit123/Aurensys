@@ -40,7 +40,6 @@ export default async function ProjectDetailPage({ params }) {
               <span className="chip">{project.category}</span>
               <span className="chip">{project.industry}</span>
               <span className="chip">{project.year}</span>
-              {project.isSample && <span className="chip">Sample concept</span>}
             </div>
             <h1 className={styles.detailTitle}>{project.title}</h1>
             <p className="lead" style={{ maxWidth: 680, marginTop: 16 }}>

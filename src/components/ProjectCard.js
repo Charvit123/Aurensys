@@ -8,7 +8,6 @@ export default function ProjectCard({ project }) {
     <Link href={`/projects/${project.slug}`} className={styles.card}>
       <div className={styles.media}>
         <ProjectCover project={project} />
-        {project.isSample && <span className={styles.badge}>Sample</span>}
       </div>
       <div className={styles.content}>
         <div className={styles.meta}>

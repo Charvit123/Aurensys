@@ -2,6 +2,7 @@
 
 ```
 aurensys/
+├── .github/workflows/ci.yml    GitHub Actions: lint + build on every push / PR
 ├── public/                     Static files served from the site root
 │   ├── logo-mark.svg           Logo symbol only
 │   ├── logo-dark.svg           Symbol + wordmark, for dark backgrounds
@@ -14,7 +15,7 @@ aurensys/
 │   │   ├── globals.css         Design tokens + shared utility classes (.btn, .container, .section…)
 │   │   ├── page.js             Home  (/)
 │   │   ├── about/page.js       About (/about)
-│   │   ├── projects/page.js    Projects list (/projects)
+│   │   ├── projects/page.js    Projects list, or “Coming soon” while empty (/projects)
 │   │   ├── projects/[slug]/page.js   Project detail (statically generated, awaits async `params`)
 │   │   ├── contact/page.js     Contact (/contact)
 │   │   ├── not-found.js        404 page
@@ -25,7 +26,7 @@ aurensys/
 │   ├── data/                   All editable content
 │   │   ├── site.js             Company info, nav links, values, process, commitments, tech stack
 │   │   ├── services.js         Service cards
-│   │   └── projects.js         Projects / case studies (currently samples)
+│   │   └── projects.js         Projects / case studies (empty → Coming soon)
 │   └── styles/                 Page-level CSS Modules (Home, About, Projects, Contact)
 ├── docs/                       Project documentation
 ├── next.config.mjs             Next.js config (pins turbopack.root to this folder)
@@ -54,6 +55,7 @@ aurensys/
 | `ProjectCover` | server | Generated project artwork from accent colours + pattern |
 | `ProjectCard` | server | Card linking to a project detail page |
 | `ProjectsGrid` | client | Category filter + animated grid |
+| `ProjectsComingSoon` | server | Shown on /projects while there are no projects |
 | `ContactForm` | client | Validated form, EmailJS or `mailto:` fallback |
 | `Faq` | client | Accordion |
 
