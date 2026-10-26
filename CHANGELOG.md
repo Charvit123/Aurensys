@@ -18,6 +18,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md#updating-the-changelog) for the format.
   and the header no longer shifts while the animation loops.
 - **Home hero (tablet / zoomed desktop, ≤ 960px)**: the panel now spans the full content width instead of being
   capped at 560px, removing the empty gap on the right.
+- **Layout (very large screens)**: content looked small with wide empty sides on 1600px+ monitors. The content
+  width now steps up (`--container`: 1180 → 1340px at 1600px, 1480px at 1920px, 1640px at 2400px), body text
+  goes to 17px at 1920px+, and the hero heading can reach 88px. Laptop sizes are unchanged.
+- **Home hero glow**: the aurora background is anchored to the content width instead of the screen edge, so on
+  wide screens the glow sits behind the pipeline panel rather than far off to the right.
 
 ### Added
 

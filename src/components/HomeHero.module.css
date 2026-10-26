@@ -5,8 +5,14 @@
 }
 
 .aurora {
+  /* anchored to the content width (not the screen edge) so the glow stays
+     behind the panel on very wide screens */
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: min(100%, calc(var(--container) + 320px));
+  transform: translateX(-50%);
   pointer-events: none;
   filter: blur(70px);
   opacity: 0.9;
