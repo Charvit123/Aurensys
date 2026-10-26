@@ -1,0 +1,9 @@
+# Store text files with LF line endings in the repo, whatever the OS/editor uses locally.
+# Stops Windows editors (CRLF) from making files show up as "modified" in git.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff binary
+*.woff2 binary

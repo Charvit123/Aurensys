@@ -19,6 +19,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md#updating-the-changelog) for the format.
 - **Home hero (tablet / zoomed desktop, ≤ 960px)**: the panel now spans the full content width instead of being
   capped at 560px, removing the empty gap on the right.
 
+### Added
+
+- **Repo**: `.gitattributes` (`* text=auto eol=lf`) so files re-saved with Windows (CRLF) line endings no longer show
+  up as modified in git.
+
 ## [1.2.0] — 2026-10-26
 
 Ready for hosting: no placeholder projects, automatic deploys.
