@@ -87,7 +87,7 @@ One-time setup and day-to-day workflow: **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.m
 
 ## Before going live — checklist
 
-- [ ] Replace placeholder email `hello@aurensys.com` and social links in `src/data/site.js`
+- [ ] Replace placeholder email `hello@aurensys.com` in `src/data/site.js`
 - [ ] Set the final domain in `site.url`
 - [ ] Connect the repo to Vercel (see `docs/DEPLOYMENT.md`)
 - [ ] Add real case studies to `src/data/projects.js` when ready (the Projects page shows “Coming soon” until then)

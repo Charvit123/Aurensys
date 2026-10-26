@@ -41,7 +41,7 @@ aurensys/
 | Component | Type | Purpose |
 | --- | --- | --- |
 | `Navbar` | client | Fixed header, blur on scroll, animated active pill, mobile menu |
-| `Footer` | server | Links, contact, socials, giant wordmark |
+| `Footer` | server | Company & services links, contact email, giant wordmark |
 | `Logo` / `LogoMark` | server | SVG logo with gradient (unique gradient id per instance) |
 | `Icon` | server | Inline stroke icons — add new ones to the `paths` map |
 | `HomeHero` | client | Home hero with word-by-word reveal and aurora background |

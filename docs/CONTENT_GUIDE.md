@@ -2,9 +2,9 @@
 
 Almost every word on the site lives in `src/data/`. Edit, save, and the dev server reloads instantly.
 
-## Company details, email, socials
+## Company details & email
 
-`src/data/site.js` → `site` object: `email`, `phone`, `location`, `socials`, `url`.
+`src/data/site.js` → `site` object: `email`, `phone`, `location`, `url`.
 These feed the navbar, footer, contact page and SEO tags.
 
 ## Values, process steps, commitments, tech stack

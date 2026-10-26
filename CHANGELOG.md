@@ -29,6 +29,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md#updating-the-changelog) for the format.
 - **Repo**: `.gitattributes` (`* text=auto eol=lf`) so files re-saved with Windows (CRLF) line endings no longer show
   up as modified in git.
 
+### Removed
+
+- **Footer**: “Follow” column (LinkedIn, GitHub, X / Twitter, Instagram) and the placeholder `socials` list in
+  `src/data/site.js`; the footer now has two link columns (Company, Services). Docs updated accordingly.
+
 ## [1.2.0] — 2026-10-26
 
 Ready for hosting: no placeholder projects, automatic deploys.

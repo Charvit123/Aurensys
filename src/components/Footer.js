@@ -46,18 +46,6 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className={styles.colTitle}>Follow</h3>
-              <ul>
-                {site.socials.map((s) => (
-                  <li key={s.label}>
-                    <a href={s.href} target="_blank" rel="noopener noreferrer">
-                      {s.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
 

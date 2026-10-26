@@ -15,12 +15,6 @@ export const site = {
   phone: '',
   location: 'India · Working with clients worldwide',
   responseTime: 'We reply within 24 hours',
-  socials: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/aurensys' },
-    { label: 'GitHub', href: 'https://github.com/aurensys' },
-    { label: 'X / Twitter', href: 'https://x.com/aurensys' },
-    { label: 'Instagram', href: 'https://www.instagram.com/aurensys' },
-  ],
 };
 
 export const navLinks = [
