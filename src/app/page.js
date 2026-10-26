@@ -40,7 +40,7 @@ export default function HomePage() {
           <div className={styles.services}>
             {services.map((s, i) => (
               <Reveal key={s.title} delay={(i % 3) * 0.08}>
-                <SpotlightCard className={styles.service}>
+                <SpotlightCard id={s.id} className={styles.service}>
                   <span className={styles.serviceIcon}>
                     <Icon name={s.icon} size={22} />
                   </span>

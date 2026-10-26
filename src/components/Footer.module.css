@@ -8,7 +8,9 @@
 
 .top {
   display: grid;
-  grid-template-columns: 1.1fr 1.6fr;
+  /* brand on the left, link columns pushed to the right edge so they line up
+     with the bottom row */
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 48px;
   padding-bottom: 56px;
 }
@@ -50,8 +52,9 @@
 
 .cols {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(2, auto);
+  column-gap: clamp(48px, 7vw, 112px);
+  row-gap: 32px;
 }
 
 .colTitle {
@@ -118,5 +121,6 @@
 @media (max-width: 560px) {
   .cols {
     grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
   }
 }

@@ -21,11 +21,23 @@ See [CONTRIBUTING.md](CONTRIBUTING.md#updating-the-changelog) for the format.
 - **Layout (very large screens)**: content looked small with wide empty sides on 1600px+ monitors. The content
   width now steps up (`--container`: 1180 → 1340px at 1600px, 1480px at 1920px, 1640px at 2400px), body text
   goes to 17px at 1920px+, and the hero heading can reach 88px. Laptop sizes are unchanged.
+- **Footer service links**: all pointed to `/#services`, so only the first click worked. Each now goes to its own
+  service card and works on repeat clicks; all 6 services are listed (was 5).
+- **Hero “Explore services”**: works on repeated clicks.
+- **Footer alignment**: link columns sit at the right edge, aligned with the bottom row, instead of floating in a
+  stretched grid.
+- **Anchors**: `scroll-margin-top` on elements with an `id`, so jumped-to content isn't hidden under the fixed
+  navbar.
 - **Home hero glow**: the aurora background is anchored to the content width instead of the screen edge, so on
   wide screens the glow sits behind the pipeline panel rather than far off to the right.
 
 ### Added
 
+- **ScrollLink component**: link to an in-page anchor that scrolls on every click (Next.js `<Link>` ignores a
+  repeat click on the same URL) and briefly highlights the target. Used by the footer service links and the hero
+  “Explore services” button.
+- **Service anchors**: each service card on the Home page has its own `id` (`/#web-applications`, …) from
+  `src/data/services.js`.
 - **Repo**: `.gitattributes` (`* text=auto eol=lf`) so files re-saved with Windows (CRLF) line endings no longer show
   up as modified in git.
 

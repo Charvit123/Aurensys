@@ -43,6 +43,7 @@ aurensys/
 | `Navbar` | client | Fixed header, blur on scroll, animated active pill, mobile menu |
 | `Footer` | server | Company & services links, contact email, giant wordmark |
 | `Logo` / `LogoMark` | server | SVG logo with gradient (unique gradient id per instance) |
+| `ScrollLink` | client | Link to an in-page anchor that scrolls on every click (+ brief highlight) |
 | `Icon` | server | Inline stroke icons — add new ones to the `paths` map |
 | `HomeHero` | client | Home hero with word-by-word reveal and aurora background |
 | `HeroPanel` | client | Looping “delivery pipeline” illustration |

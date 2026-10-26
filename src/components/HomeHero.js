@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import Icon from './Icon';
+import ScrollLink from './ScrollLink';
 import HeroPanel from './HeroPanel';
 import { site } from '@/data/site';
 import styles from './HomeHero.module.css';
@@ -66,9 +67,9 @@ export default function HomeHero() {
             <Link href="/contact" className="btn btn-primary">
               Start a project <Icon name="arrow" size={16} />
             </Link>
-            <Link href="/#services" className="btn btn-ghost">
+            <ScrollLink href="/#services" className="btn btn-ghost">
               Explore services
-            </Link>
+            </ScrollLink>
           </motion.div>
 
           <motion.ul className={styles.points} {...fade(0.65)}>

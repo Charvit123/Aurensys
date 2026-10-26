@@ -297,6 +297,20 @@ p {
   margin: 0;
 }
 
+/* ---------- Anchors ---------- */
+
+/* keep anchored sections/cards clear of the fixed navbar */
+[id] {
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+}
+
+/* short highlight on the item a ScrollLink jumped to */
+[data-flash] {
+  border-color: rgba(245, 181, 68, 0.6) !important;
+  box-shadow: 0 0 0 4px rgba(245, 181, 68, 0.12), 0 20px 50px -20px rgba(245, 181, 68, 0.35);
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
 /* ---------- Accessibility ---------- */
 
 .sr-only {

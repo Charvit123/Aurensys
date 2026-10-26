@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Logo from './Logo';
+import ScrollLink from './ScrollLink';
 import Icon from './Icon';
 import { navLinks, site } from '@/data/site';
 import { services } from '@/data/services';
@@ -39,9 +40,9 @@ export default function Footer() {
             <div>
               <h3 className={styles.colTitle}>Services</h3>
               <ul>
-                {services.slice(0, 5).map((s) => (
-                  <li key={s.title}>
-                    <Link href="/#services">{s.title}</Link>
+                {services.map((s) => (
+                  <li key={s.id}>
+                    <ScrollLink href={`/#${s.id}`}>{s.title}</ScrollLink>
                   </li>
                 ))}
               </ul>

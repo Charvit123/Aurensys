@@ -13,7 +13,8 @@ Also in `src/data/site.js` (`values`, `process`, `commitments`, `techStack`, `ma
 
 ## Services
 
-`src/data/services.js`. Each service has an `icon` key — available icons are listed in
+`src/data/services.js`. Each service has an `id` (its anchor on the Home page — the footer links to `/#<id>`,
+so keep it unique, lowercase, with dashes) and an `icon` key — available icons are listed in
 `src/components/Icon.js` (`code`, `browser`, `mobile`, `cloud`, `spark`, `pen`, `layers`, `shield`, …).
 
 ## Adding a real project
